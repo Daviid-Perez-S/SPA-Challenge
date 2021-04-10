@@ -1,0 +1,22 @@
+<app-dashboard>
+
+    <div class="container">
+
+        <app-alert *ngIf="isAlertVisible" [init_state]="requestState" [init_text]="textAlert"></app-alert>
+        
+        <h1 class="title">Characters</h1>
+        
+        <div *ngIf="characters != null">
+            <mat-accordion>
+                <div *ngFor="let ch of characters.data">
+                    <app-character-item [init]="ch" (notifyAlert)="onNotifyAlert($event)"></app-character-item>
+                </div>
+            </mat-accordion>
+        </div>
+
+        <mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
+        <mat-card *ngIf="characters == null && !isLoading" class="no-characters-card">Ups.. there's no characters</mat-card>
+
+    </div>
+
+</app-dashboard>

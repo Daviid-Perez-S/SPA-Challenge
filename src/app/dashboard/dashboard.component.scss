@@ -1,0 +1,12 @@
+.ambient-sound {
+    width: 60%;
+    margin: 3% auto;
+
+    & audio {
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.card-alert {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+
+    &.success {
+        background-color: green;
+
+        & h3 {
+            color: white;
+        }
+    }
+    
+    &.error {
+        background-color: red;
+
+        & h3 {
+            color: white;
+        }
+    }
+}

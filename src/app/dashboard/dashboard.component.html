@@ -1,0 +1,15 @@
+<app-side-menu>
+
+    <app-header>Dashboard</app-header>
+
+    <div class="ambient-sound">
+        <h2>Sonido de ambiente 😎</h2>
+        <audio controls>
+            <source src="{{ urlAudio }}" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <ng-content></ng-content>
+
+</app-side-menu>

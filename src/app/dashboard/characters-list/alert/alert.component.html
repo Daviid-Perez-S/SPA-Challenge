@@ -1,0 +1,11 @@
+<mat-card class="card-alert success" *ngIf="requestState">
+    <mat-card-content>
+        <h3>{{ textAlert }}</h3>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="card-alert error" *ngIf="!requestState">
+    <mat-card-content>
+        <h3>{{ textAlert }}</h3>
+    </mat-card-content>
+</mat-card>

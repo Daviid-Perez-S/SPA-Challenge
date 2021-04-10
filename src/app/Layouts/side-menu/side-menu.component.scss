@@ -1,0 +1,52 @@
+$whiteColor: white;
+$themeColor: #6F553F;
+$hoverColor: 	#ffeccf;
+
+.container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    & .sidenav{
+      background-color: $themeColor;
+  
+      & .toolbar{
+        color: $themeColor;
+        background-color: $whiteColor;
+        display: flex;
+        justify-content: center;
+      }
+
+      & .divider {
+        background-color: $whiteColor;
+      }
+  
+      /*
+      * Navigation
+      */
+      & .mat-list-item {
+        
+        &:hover {
+          background-color: $hoverColor;
+          
+          & a {
+            color: $themeColor;
+          }
+
+          & button {
+            color: $themeColor;
+          }
+        }
+        
+        & a {
+          color: $whiteColor;
+        }
+        
+        & button {
+          color: $whiteColor;
+        }
+      }
+    }
+  }

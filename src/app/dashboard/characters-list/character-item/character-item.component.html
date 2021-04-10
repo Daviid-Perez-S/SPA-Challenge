@@ -1,0 +1,37 @@
+<div class="container-panel">
+
+    <mat-expansion-panel class="panel-item" [expanded]="isExpanded" (opened)="isExpanded = true" (closed)="isExpanded = false">
+        <mat-expansion-panel-header class="panel-header">
+          <mat-panel-title class="panel-title">
+            <img class="character-img" src="{{ character.image }}" alt="Eren Yeager profile picture">
+            <div class="character-info">
+              <p class="ch-name">{{ character.name }}</p>
+              <p class="ch-location">{{ character.location.name }}</p>
+              <app-badge [init]="character.status"></app-badge>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <!-- Update Character name -->
+        <mat-form-field hintLabel="Current character's name"  appearance="outline" class="form-field">
+            <mat-label>Name</mat-label>
+            <input [(ngModel)]="character.name" (ngModelChange)="checkInputs()" matInput type="text" autocomplete="off" placeholder="Type a new name...">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+            <mat-error *ngIf="characterNameError">You must enter a name</mat-error>
+        </mat-form-field>
+        <!-- Update Character location -->
+        <mat-form-field hintLabel="Last known character location" appearance="outline" class="form-field">
+            <mat-label>Location</mat-label>
+            <input [(ngModel)]="character.location.name" (ngModelChange)="checkInputs()" matInput type="text" autocomplete="off" placeholder="Type a new location...">
+            <mat-icon matSuffix>person_pin_circle</mat-icon>
+            <mat-error *ngIf="characterLocationError">You must enter a location</mat-error>
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-flat-button (click)="onReset()">Reset</button>
+          <button mat-flat-button type="button" disabled (click)="onSubmit(character.id)" [disabled]="characterNameError || characterLocationError" class="button-custom-color">
+              Update Character
+              <mat-icon inline=true aria-hidden="false" aria-label="Send icon">send</mat-icon>
+          </button>
+        </mat-action-row>
+    </mat-expansion-panel>
+    
+</div>

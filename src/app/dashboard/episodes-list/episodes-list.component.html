@@ -1,0 +1,21 @@
+<app-dashboard>
+
+    <div class="container">
+        
+        <h1 class="title">Episodes</h1>
+
+        <mat-grid-list cols="3" rowHeight="2:1" *ngIf="episodes != null">
+            <mat-grid-tile *ngFor="let ep of episodes.data">
+                <mat-card class="episode-card">
+                    <p><span class="text-bold">Episode:</span> {{ ep.sku }}</p>
+                    <p><span class="text-bold">Name:</span> {{ ep.name }}</p>
+                    <p><span class="text-bold">Air date:</span> {{ ep.air_date }}</p>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-card *ngIf="episodes == null" class="no-episodes-card">Ups.. there's no episodes</mat-card>
+
+    </div>
+
+</app-dashboard>

@@ -1,0 +1,11 @@
+.outer-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+    & .inner-div {
+        text-align: center;
+        width: 40%;
+    }
+}
